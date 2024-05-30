@@ -1,6 +1,6 @@
 import unittest
 
-import myclass as my
+import ClassToTest as my
 
 class TestStack(unittest.TestCase):
 
@@ -10,13 +10,13 @@ class TestStack(unittest.TestCase):
         setUp is called before each test function execution.
         """
         self.stack = my.Stack(10)
-        #print("setUp is called")
+        print("setUp is called")
         
     def tearDown(self):
         """
         tearDown is called after each test function execution.
         """
-        #print("tearDown is called")
+        print("tearDown is called")
         
     def testPush(self):
         self.stack.push(30)
@@ -26,12 +26,12 @@ class TestStack(unittest.TestCase):
     def testStackFull(self):
         for e in range(10):
             self.stack.push(e)
+            
         self.assertRaises(Exception, self.stack.push, 19) 
          
     def testPop(self):
         if len(self.stack) < self.stack.maxSize():
             val=23
-        orgSize=len(self.stack)
         self.stack.push(val)
         self.assertEqual(self.stack.pop(), val)
         self.assertEqual(len(self.stack), 1)

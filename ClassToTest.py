@@ -1,4 +1,3 @@
-# sphinx
 
 class StackEmptyError(Exception):
     pass
