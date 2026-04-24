@@ -1,5 +1,4 @@
 """
-
 Exercise:
 
 The goal is to develop a client<->server program using a stream socket.

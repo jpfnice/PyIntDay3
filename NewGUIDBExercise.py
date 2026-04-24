@@ -1,3 +1,23 @@
+"""
+The goal is to complete this code (TODO comments) in order for this script
+to be able to retrieve, from a socket service, the price and the qty of the 
+corresponding product.
+
+There will be a need, int order for this client to work, to define a "Socket Service" that will implement the following protocol:
+    
+    1) The service expect it's client to send the name of a product
+    2) the service will search the product name in the table "product" 
+    (database file epfl.db in https://github.com/jpfnice/PyIntDay2)
+    3) if the product exist, the service send back to the client the price and 
+    the qty of the product.
+    Note: you could implement the service in such a way that it sends back to the     client the whole product object as bytes (using pickle), but it is simply an option
+    4) if the product does not exist, the service send back a error message to 
+    the client
+    5) The client will send a "stop" message to inform the service it does not 
+    need anything else
+
+"""
+
 import tkinter as tk
 import tkinter.messagebox as mb
 
