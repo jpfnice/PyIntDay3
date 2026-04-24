@@ -8,11 +8,17 @@ The server is in charge of returning information about a product
 created yesterday.
 
 The "client", with the help of a GUI (see NewGUIDBExercise.py in 
-https://github.com/jpfnice/PyIntDay3AM), will send a product name to the
+https://github.com/jpfnice/PyIntDay3), will send a product name to the
 server. And will then wait for the server to return it's corresponding 
 price and qty.
 If the product name does not exist, the server will return an error message.
 
+Note: on windows you can use the command:
+    
+    netstat -na| find "34567"
+    
+    to see if the port number 34567 is in used or not
+    
 """
 import socket
 
@@ -32,7 +38,7 @@ def getProduct(name):
 
 try:
     sock_srv=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock_srv.bind(("localhost", 34566)) # nmap or netstat
+    sock_srv.bind(("localhost", 34567)) # nmap or netstat
     sock_srv.listen(2)
     while True:
         print("Server ready")

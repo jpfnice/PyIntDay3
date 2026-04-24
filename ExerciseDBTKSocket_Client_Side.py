@@ -1,6 +1,8 @@
 import tkinter as tk
 import tkinter.messagebox as mb
-
+import pickle
+import socket
+        
 class MyWindow(tk.Tk):
     
     def __init__(self):
@@ -61,14 +63,14 @@ class MyWindow(tk.Tk):
         
     def load(self):
 
-        import socket
         try:
             sock_cli=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            sock_cli.connect(("localhost", 34566))
-            
+            sock_cli.connect(("localhost", 34567))
+            print("message to be sent:", self.nameStr.get())
             sock_cli.send(self.nameStr.get().encode())
+            
             resp=sock_cli.recv(40)
-            import pickle
+            
             row=pickle.loads(resp)
             print(f"Response from server: {row}")
             

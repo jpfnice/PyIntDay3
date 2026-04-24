@@ -7,7 +7,7 @@ There will be a need, int order for this client to work, to define a "Socket Ser
     
     1) The service expect it's client to send the name of a product
     2) the service will search the product name in the table "product" 
-    (database file epfl.db in https://github.com/jpfnice/PyIntDay2)
+    (database file epfl.db in https://github.com/jpfnice/PyIntDay3)
     3) if the product exist, the service send back to the client the price and 
     the qty of the product.
     Note: you could implement the service in such a way that it sends back to the     client the whole product object as bytes (using pickle), but it is simply an option
